@@ -1,0 +1,4 @@
+rootProject.name = 'kafka-beginners-course'
+include 'kafka-basics:kafka-basics'
+findProject(':kafka-basics:kafka-basics')?.name = 'kafka-basics'
+
