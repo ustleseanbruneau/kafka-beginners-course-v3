@@ -1,0 +1,18 @@
+<configuration scan="true">
+    <!-- logback.xml => used with org.apache.logging.log4j logging framework -->
+    <!-- log levels order - ALL, DEBUG, INFO, WARN, ERROR, FATAL, OFF, TRACE -->
+
+    <timestamp key="byDay" datePattern="yyyyMMdd'T'HHmmss"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="org.apache.kafka" level="INFO"/>
+    <logger name="org.apache.kafka.common.metrics" level="INFO"/>
+    <logger name="org.springframework" level="INFO"/>
+    <root level="warn">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
